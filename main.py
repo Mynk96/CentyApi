@@ -15,6 +15,7 @@ def parseMessage():
             attributes_dic = {}
             for ent in d.ents:
                 attributes_dic[ent.label_] = ent.text
+                attributes_dic["message"] = message['data']
             message_response_list.append(attributes_dic)
         return json.dumps({
             'result':message_response_list
